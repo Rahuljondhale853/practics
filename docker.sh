@@ -8,7 +8,7 @@ CONTAINER_NAME="nodejsapp"
 # Pull the latest code
 echo "Pulling the latest code from the repository..."
 #cd $REPO_DIR || { echo "Repository directory not found! Exiting."; exit 1; }
-git pull
+git pull origin master
  
 # Get the latest commit ID
 COMMIT_ID=$(git rev-parse --short HEAD)

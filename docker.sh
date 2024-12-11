@@ -16,7 +16,7 @@ echo "Latest commit ID: $COMMIT_ID"
  
 # Build the new Docker image with the commit ID as the tag
 echo "Building the Docker image..."
-docker build -t $IMAGE_NAME:$COMMIT_ID .
+docker build --no-cache -t $IMAGE_NAME:$COMMIT_ID .
  
 # Stop and remove the current running container
 echo "Stopping and removing the current container..."

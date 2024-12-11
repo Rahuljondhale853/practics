@@ -71,4 +71,3 @@ echo "Running a new container with the updated image..."
 docker run -d -p 3000:3000 --name $CONTAINER_NAME $IMAGE_NAME:$COMMIT_ID || { echo "Failed to run the new container. Exiting."; exit 1; }
 
 echo "Deployment completed successfully!"
-

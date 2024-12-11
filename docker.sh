@@ -1,7 +1,7 @@
 #!/bin/bash
  
 # Variables
-#REPO_DIR="/path/to/your/repo"
+REPO_DIR="/var/www/html/practics"
 IMAGE_NAME="practics"
 CONTAINER_NAME="nodejsapp"
  

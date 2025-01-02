@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: "us-east-1"
+    REPOSITORY_NAME: ""
+    GITHUB_REPO: "https://github.com/Rahuljondhale853/nodejs"
+    AWS_ACCOUNT_ID: "337909742643"
+	
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_NAME .
+      - echo Tagging the Docker image...
+      - docker tag $REPOSITORY_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY_NAME:latest
+  post_build:
+    commands:
+      - echo Pushing the Docker image to ECR...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY_NAME:latest
+      - echo Updating ECS service with the new image...
+      - aws ecs update-service --cluster your-ecs-cluster-name --service your-ecs-service-name --force-new-deployment --region $AWS_REGION
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes

@@ -7,7 +7,6 @@ env:
     GITHUB_REPO: "https://github.com/Rahuljondhale853/practics"
     AWS_ACCOUNT_ID: "337909742643"
 	
-
 phases:
   pre_build:
     commands:

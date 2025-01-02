@@ -3,8 +3,8 @@ version: 0.2
 env:
   variables:
     AWS_REGION: "us-east-1"
-    REPOSITORY_NAME: ""
-    GITHUB_REPO: "https://github.com/Rahuljondhale853/nodejs"
+    REPOSITORY_NAME: "337909742643.dkr.ecr.us-east-1.amazonaws.com/rahul/nginx"
+    GITHUB_REPO: "https://github.com/Rahuljondhale853/practics"
     AWS_ACCOUNT_ID: "337909742643"
 	
 

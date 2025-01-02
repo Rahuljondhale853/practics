@@ -5,8 +5,7 @@ env:
     AWS_REGION: "us-east-1"
     REPOSITORY_NAME: "337909742643.dkr.ecr.us-east-1.amazonaws.com/rahul/nginx"
     GITHUB_REPO: "https://github.com/Rahuljondhale853/practics"
-    AWS_ACCOUNT_ID: "337909742643"
-	
+    AWS_ACCOUNT_ID: "337909742643"	
 phases:
   pre_build:
     commands:
